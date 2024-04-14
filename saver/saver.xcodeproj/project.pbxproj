@@ -11,6 +11,8 @@
 		26E63E9C2BCC52DC00A15E8C /* ShadertoyConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E63E9B2BCC52DC00A15E8C /* ShadertoyConfigView.swift */; };
 		26E63E9E2BCC53A900A15E8C /* ShadertoyConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E63E9D2BCC53A900A15E8C /* ShadertoyConfigViewModel.swift */; };
 		26E63F072BCC648500A15E8C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26E63F062BCC648500A15E8C /* Info.plist */; };
+		26E63F1C2BCC805100A15E8C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E63F1A2BCC804A00A15E8C /* OpenGL.framework */; };
+		26E63F202BCC808D00A15E8C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E63F1F2BCC808D00A15E8C /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		26E63E9B2BCC52DC00A15E8C /* ShadertoyConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadertoyConfigView.swift; sourceTree = "<group>"; };
 		26E63E9D2BCC53A900A15E8C /* ShadertoyConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadertoyConfigViewModel.swift; sourceTree = "<group>"; };
 		26E63F062BCC648500A15E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		26E63F1A2BCC804A00A15E8C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		26E63F1F2BCC808D00A15E8C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +30,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E63F202BCC808D00A15E8C /* Cocoa.framework in Frameworks */,
+				26E63F1C2BCC805100A15E8C /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,8 @@
 		26E63E962BCC524700A15E8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26E63F1F2BCC808D00A15E8C /* Cocoa.framework */,
+				26E63F1A2BCC804A00A15E8C /* OpenGL.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,6 +168,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					x86_64,
+					"$(ARCHS_STANDARD)",
+				);
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -213,7 +225,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = saver;
 				SDKROOT = macosx;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -225,6 +237,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					x86_64,
+					"$(ARCHS_STANDARD)",
+				);
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
