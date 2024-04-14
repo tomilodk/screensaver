@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ConfigView: View {
     @StateObject private var viewModel = ConfigViewModel()
+    var closeAction: () -> Void
 
     var body: some View {
         Form {
@@ -12,14 +13,10 @@ struct ConfigView: View {
                 viewModel.saveSettings()
             }
             Button("Close") {
-                closeConfiguration()
+                self.closeAction()
             }
         }
         .padding()
         .frame(width: 300, height: 200)
-    }
-    
-    private func closeConfiguration() {
-        NSApplication.shared.keyWindow?.close()
     }
 }
