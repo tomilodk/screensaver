@@ -1,6 +1,7 @@
 import Cocoa
 import OpenGL.GL3
 import ScreenSaver
+import SwiftUI
 
 class SaverView: ScreenSaverView {
     var glContext: NSOpenGLContext?
@@ -109,6 +110,33 @@ class SaverView: ScreenSaverView {
     override func animateOneFrame() {
         self.needsDisplay = true
     }
+    
+    override var hasConfigureSheet: Bool {
+        return true
+    }
+
+    var configWindow: NSWindow?
+
+    override var configureSheet: NSWindow? {
+        if configWindow == nil {
+            let hostingController = NSHostingController(rootView: ConfigView(closeAction: {
+                self.closeConfigWindow()
+            }))
+            configWindow = NSWindow(contentViewController: hostingController)
+            configWindow?.setContentSize(NSSize(width: 300, height: 200))
+            print("Window created")  // Debug statement
+        }
+        return configWindow
+    }
+
+    func closeConfigWindow() {
+        print("Attempting to close window")  // Debug statement
+        configWindow?.orderOut(nil)  // Explicitly removing the window from display
+        configWindow?.close()
+        configWindow = nil
+    }
+
+
 }
 
 extension Array {
