@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import SwiftUI
 
 class ConfigViewModel: ObservableObject {
     @Published var shadertoyShaderID: String = ""
@@ -26,29 +27,35 @@ class ConfigViewModel: ObservableObject {
         
         fetchShaderData()
     }
-    
+
     private func fetchShaderData() {
-        let baseUrl = "https://www.shadertoy.com/api/v1/shaders/"
-        guard let url = URL(string: "\(baseUrl)\(shadertoyShaderID)?key=\(shadertoyApiKey)") else {
-            statusMessage = "Invalid URL"
+        let requestUrl = createRequestString(shaderId: shadertoyShaderID, apiKey: shadertoyApiKey)
+        guard let url = URL(string: requestUrl) else {
+            self.statusMessage = "Invalid URL"
             return
         }
-        
-        URLSession.shared.dataTaskPublisher(for: url)
-            .map(\.data)
-            .decode(type: String.self, decoder: JSONDecoder()) // Assuming the data is directly decodable to String, adjust based on actual data format
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    self.statusMessage = "Fetching shader was successful"
-                case .failure(let error):
-                    self.statusMessage = "Error fetching shader: \(error.localizedDescription)"
+
+        let session = URLSession.shared
+        let request = URLRequest(url: url)
+
+        session.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let data = data else {
+                    self.statusMessage = "Error from Shadertoy: \(error?.localizedDescription ?? "Unknown error")"
+                    return
                 }
-            }, receiveValue: { shaderJson in
-                let defaults = UserDefaults(suiteName: self.myModuleName)!
-                defaults.set(shaderJson, forKey: "ShaderJSON")
-            })
-            .store(in: &cancellables)
+
+                if let shaderJson = String(data: data, encoding: .utf8) {
+                    UserDefaults(suiteName: self.myModuleName)?.set(shaderJson, forKey: "ShaderJSON")
+                    self.statusMessage = "Fetching shader was successful"
+                } else {
+                    self.statusMessage = "Failed to decode response"
+                }
+            }
+        }.resume()
+    }
+
+    private func createRequestString(shaderId: String, apiKey: String) -> String {
+        return "https://www.shadertoy.com/api/v1/shaders/\(shaderId)?key=\(apiKey)"
     }
 }
