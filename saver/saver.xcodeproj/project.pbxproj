@@ -1,0 +1,357 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26E63E872BCC513500A15E8C /* saverView.h in Headers */ = {isa = PBXBuildFile; fileRef = 26E63E862BCC513500A15E8C /* saverView.h */; };
+		26E63E892BCC513500A15E8C /* saverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E63E882BCC513500A15E8C /* saverView.m */; };
+		26E63E952BCC51E700A15E8C /* SaverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E63E942BCC51E700A15E8C /* SaverView.swift */; };
+		26E63E982BCC524700A15E8C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E63E972BCC524700A15E8C /* OpenGL.framework */; };
+		26E63E9A2BCC525800A15E8C /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E63E992BCC525800A15E8C /* Metal.framework */; };
+		26E63E9C2BCC52DC00A15E8C /* ShadertoyConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E63E9B2BCC52DC00A15E8C /* ShadertoyConfigView.swift */; };
+		26E63E9E2BCC53A900A15E8C /* ShadertoyConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E63E9D2BCC53A900A15E8C /* ShadertoyConfigViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		26E63E832BCC513500A15E8C /* saver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = saver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		26E63E862BCC513500A15E8C /* saverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = saverView.h; sourceTree = "<group>"; };
+		26E63E882BCC513500A15E8C /* saverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = saverView.m; sourceTree = "<group>"; };
+		26E63E8F2BCC514800A15E8C /* saver-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "saver-Bridging-Header.h"; sourceTree = "<group>"; };
+		26E63E942BCC51E700A15E8C /* SaverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaverView.swift; sourceTree = "<group>"; };
+		26E63E972BCC524700A15E8C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		26E63E992BCC525800A15E8C /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		26E63E9B2BCC52DC00A15E8C /* ShadertoyConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadertoyConfigView.swift; sourceTree = "<group>"; };
+		26E63E9D2BCC53A900A15E8C /* ShadertoyConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadertoyConfigViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26E63E802BCC513500A15E8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E63E9A2BCC525800A15E8C /* Metal.framework in Frameworks */,
+				26E63E982BCC524700A15E8C /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26E63E792BCC513500A15E8C = {
+			isa = PBXGroup;
+			children = (
+				26E63E852BCC513500A15E8C /* saver */,
+				26E63E842BCC513500A15E8C /* Products */,
+				26E63E962BCC524700A15E8C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		26E63E842BCC513500A15E8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26E63E832BCC513500A15E8C /* saver.saver */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26E63E852BCC513500A15E8C /* saver */ = {
+			isa = PBXGroup;
+			children = (
+				26E63E862BCC513500A15E8C /* saverView.h */,
+				26E63E9D2BCC53A900A15E8C /* ShadertoyConfigViewModel.swift */,
+				26E63E9B2BCC52DC00A15E8C /* ShadertoyConfigView.swift */,
+				26E63E882BCC513500A15E8C /* saverView.m */,
+				26E63E942BCC51E700A15E8C /* SaverView.swift */,
+				26E63E8F2BCC514800A15E8C /* saver-Bridging-Header.h */,
+			);
+			path = saver;
+			sourceTree = "<group>";
+		};
+		26E63E962BCC524700A15E8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26E63E992BCC525800A15E8C /* Metal.framework */,
+				26E63E972BCC524700A15E8C /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		26E63E7E2BCC513500A15E8C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E63E872BCC513500A15E8C /* saverView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		26E63E822BCC513500A15E8C /* saver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26E63E8C2BCC513500A15E8C /* Build configuration list for PBXNativeTarget "saver" */;
+			buildPhases = (
+				26E63E7E2BCC513500A15E8C /* Headers */,
+				26E63E7F2BCC513500A15E8C /* Sources */,
+				26E63E802BCC513500A15E8C /* Frameworks */,
+				26E63E812BCC513500A15E8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = saver;
+			productName = saver;
+			productReference = 26E63E832BCC513500A15E8C /* saver.saver */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26E63E7A2BCC513500A15E8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					26E63E822BCC513500A15E8C = {
+						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
+					};
+				};
+			};
+			buildConfigurationList = 26E63E7D2BCC513500A15E8C /* Build configuration list for PBXProject "saver" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 26E63E792BCC513500A15E8C;
+			productRefGroup = 26E63E842BCC513500A15E8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26E63E822BCC513500A15E8C /* saver */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26E63E812BCC513500A15E8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26E63E7F2BCC513500A15E8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E63E9C2BCC52DC00A15E8C /* ShadertoyConfigView.swift in Sources */,
+				26E63E9E2BCC53A900A15E8C /* ShadertoyConfigViewModel.swift in Sources */,
+				26E63E892BCC513500A15E8C /* saverView.m in Sources */,
+				26E63E952BCC51E700A15E8C /* SaverView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		26E63E8A2BCC513500A15E8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		26E63E8B2BCC513500A15E8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		26E63E8D2BCC513500A15E8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZVW6AXT3B3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = saverView;
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mappso.saver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "saver/saver-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Debug;
+		};
+		26E63E8E2BCC513500A15E8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZVW6AXT3B3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = saverView;
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mappso.saver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "saver/saver-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26E63E7D2BCC513500A15E8C /* Build configuration list for PBXProject "saver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26E63E8A2BCC513500A15E8C /* Debug */,
+				26E63E8B2BCC513500A15E8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26E63E8C2BCC513500A15E8C /* Build configuration list for PBXNativeTarget "saver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26E63E8D2BCC513500A15E8C /* Debug */,
+				26E63E8E2BCC513500A15E8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26E63E7A2BCC513500A15E8C /* Project object */;
+}
