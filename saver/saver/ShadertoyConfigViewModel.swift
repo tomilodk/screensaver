@@ -7,7 +7,7 @@ class ConfigViewModel: ObservableObject {
     @Published var shadertoyApiKey: String = ""
     @Published var statusMessage: String = ""
     
-    private let myModuleName = "diracdrifter.Shadertoy-Screensaver"
+    private let myModuleName = "com.mappso.saver"
     private var cancellables: Set<AnyCancellable> = []
 
     init() {
@@ -45,14 +45,30 @@ class ConfigViewModel: ObservableObject {
                     return
                 }
 
-                if let shaderJson = String(data: data, encoding: .utf8) {
-                    UserDefaults(suiteName: self.myModuleName)?.set(shaderJson, forKey: "ShaderJSON")
-                    self.statusMessage = "Fetching shader was successful"
-                } else {
+                do {
+                    if let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        if let shaderCode = self.getShaderString(from: jsonObject) {
+                            UserDefaults(suiteName: self.myModuleName)?.set(shaderCode, forKey: "shaderCode")
+                            self.statusMessage = "Successfully extraded code: \(shaderCode)"
+                        } else {
+                            self.statusMessage = "Failed to extract shader code"
+                        }
+                    }
+                } catch {
                     self.statusMessage = "Failed to decode response"
                 }
             }
         }.resume()
+    }
+
+    func getShaderString(from shaderInfo: [String: Any]) -> String? {
+        guard let shader = shaderInfo["Shader"] as? [String: Any],
+              let renderPasses = shader["renderpass"] as? [[String: Any]],
+              let firstRenderPass = renderPasses.first,
+              let code = firstRenderPass["code"] as? String else {
+            return nil
+        }
+        return code
     }
 
     private func createRequestString(shaderId: String, apiKey: String) -> String {
