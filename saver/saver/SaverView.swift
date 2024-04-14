@@ -2,10 +2,12 @@ import ScreenSaver
 import SwiftUI
 
 class SaverView: ScreenSaverView {
+    var context: CGContext! = nil
     
     override init?(frame: NSRect, isPreview: Bool) {
-        super.init(frame: frame, isPreview: isPreview)
-        self.animationTimeInterval = 1.0 / 30.0
+        super.init(frame: frame, isPreview: isPreview)!
+
+        self.animationTimeInterval = TimeInterval(1)
     }
     
     required init?(coder: NSCoder) {
@@ -20,16 +22,25 @@ class SaverView: ScreenSaverView {
         super.stopAnimation()
     }
     
-    override func draw(_ rect: NSRect) {
-        super.draw(rect)
+    override func draw(_ screenRect: NSRect) {
+        super.draw(screenRect)
+
+        context = NSGraphicsContext.current!.cgContext
+
+
+        /*
+         * Draw the screen background (color)
+         */
+        context.saveGState()
+        context.setFillColor(NSColor.white.cgColor)
+        context.fill(self.bounds)
+        context.restoreGState()
+
+
     }
     
     override func animateOneFrame() {
-        NSColor.blue.setFill()
-        let rect = NSBezierPath(rect: bounds)
-        rect.fill()
-        super.animateOneFrame()
-        setNeedsDisplay(bounds)  // Force the view to redraw
+        needsDisplay = true
     }
     
     override var hasConfigureSheet: Bool {
@@ -38,8 +49,11 @@ class SaverView: ScreenSaverView {
 
     override var configureSheet: NSWindow? {
         let hostingController = NSHostingController(rootView: ConfigView())
+        
         let window = NSWindow(contentViewController: hostingController)
+        
         window.setContentSize(NSSize(width: 300, height: 200))
+        
         return window
     }
 }
