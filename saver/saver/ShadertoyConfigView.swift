@@ -12,10 +12,14 @@ struct ConfigView: View {
                 viewModel.saveSettings()
             }
             Button("Close") {
-                NSApp.keyWindow?.close()
+                closeConfiguration()
             }
         }
         .padding()
         .frame(width: 300, height: 200)
+    }
+    
+    private func closeConfiguration() {
+        NSApplication.shared.keyWindow?.close()
     }
 }
